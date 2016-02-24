@@ -17,10 +17,10 @@ puts "There are #{minutes_in_hour} minutes in an hour"
 puts "There are #{hours_in_day} hours in a day"
 puts "There are #{days_in_week} days in a week"
 puts 'That means there are:'
-puts "There are #{seconds_in_hour} in an hour,"
-puts "There are #{seconds_in_day} in a day,"
-puts "There are #{seconds_in_week} in a week,"
-puts "That means when you turn 20, you've been alive for #{seconds_in_20_years} seconds"
+puts " #{seconds_in_hour} in an hour,"
+puts " #{seconds_in_day} in a day,"
+puts " #{seconds_in_week} in a week,"
+puts "That means when you turn 20, you've been alive for #{seconds_in_20_years} seconds,"
 puts "and if you make it to 100, you will have lived #{seconds_in_100_years} seconds.  Make them count!"
 
 
