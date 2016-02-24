@@ -1,4 +1,4 @@
-#! /usr/bin/exec ruby
+#!/usr/bin/exec ruby
 
 seconds_in_minute = 60
 minutes_in_hour = 60
