@@ -1,2 +1,2 @@
-#! /usr/bin/exec ruby
+#!/usr/bin/env ruby
 puts 'Hello World'
