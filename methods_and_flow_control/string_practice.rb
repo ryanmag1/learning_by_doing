@@ -8,6 +8,7 @@ puts practice_string.upcase
 puts 'This is a \'string\' to practice with'
 puts 'The string \'' + practice_string + '\' has ' + practice_string.length.to_s + ' characters'
 puts practice_string.reverse
+puts 'practice ' * 2 + "practice!"
 
 #reate a program called "string_practice.rb"
 #Create a variable with the string "this is a string to practice with"
