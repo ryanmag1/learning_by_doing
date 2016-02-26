@@ -8,11 +8,11 @@
 
   puts case
          when fizz then
-           'fizz'
+           'Fizz'
          when buzz then
-           'buzz'
+           'Buzz'
          when fizz && buzz then
-           'fizzbuzz'
+           'FizzBuzz'
          else
            number
        end
