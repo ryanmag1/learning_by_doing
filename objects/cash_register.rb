@@ -68,11 +68,11 @@ def next_transaction
 end
 
 def start_transaction
-  object = CashRegister.new
-  object.total
-  object.purchase
-  object.pay
-  object.calculate_change
+  register = CashRegister.new
+  register.total
+  register.purchase
+  register.pay
+  register.calculate_change
   next_transaction
 end
 
