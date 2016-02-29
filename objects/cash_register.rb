@@ -1,13 +1,14 @@
 #!/usr/bin/env ruby
 
-
+# Register class to run sales transaction
 class Register
-  def total
-    puts "Current Total is #{$subtotal}"
-  end
 
   def initialize
-    $subtotal = 0.00
+    @subtotal = 0.00
+  end
+
+  def total
+    puts "Current Total is #{@subtotal}"
   end
 
   def new_purchase
@@ -18,17 +19,17 @@ class Register
       break if @purchase.to_s == 'P'
       @purchase = @purchase.to_f
       puts "New Purchase is $#{@purchase}"
-      $subtotal = $subtotal + @purchase
+      @subtotal = @subtotal + @purchase
       puts
-      print "SUBTOTAL: $#{$subtotal}"
+      print "SUBTOTAL: $#{@subtotal}"
       puts
-      print "ENTER NEW PRICE or P to pay: "
+      print 'ENTER NEW PRICE or P to pay: '
     end
   end
 
   def accept_payment
     puts
-    @new_subtotal = $subtotal
+    @new_subtotal = @subtotal
     while true
       puts
       print "Amount due: #{@new_subtotal} ENTER PAYMENT AMOUNT: $"
@@ -49,15 +50,14 @@ class Register
     puts
     puts "Your change is: $#{change_due}"
     puts
-    puts "Thank you and have a nice day!"
+    puts 'Thank you and have a nice day!'
   end
 end
 
 def next_transaction
   puts
   while true
-    start_new_trx = ''
-    print "Start another transaction? y/n: "
+    print 'Start another transaction? y/n: '
     start_new_trx = gets.chomp
     if start_new_trx == 'y'
       start_transaction
@@ -86,8 +86,8 @@ start_transaction
 #   print "ENTER PRICE or P to pay: "
 #   @purchase1 = gets.chomp.to_f
 #   puts "New Purchase is $#{@purchase1}"
-#   $subtotal = $subtotal + @purchase1
-#   print "SUBTOTAL: $#{$subtotal}"
+#   @subtotal = @subtotal + @purchase1
+#   print "SUBTOTAL: $#{@subtotal}"
 # end
 # puts Regiser
 # register = CashRegister.new
