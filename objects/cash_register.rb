@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Register class to run sales transaction
-class Register
+class CashRegister
 
   def initialize
     @subtotal = 0.00
@@ -11,7 +11,7 @@ class Register
     puts "Current Total is #{@subtotal}"
   end
 
-  def new_purchase
+  def purchase
     puts
     print 'Grocery: ENTER PRICE: '
     while true
@@ -27,7 +27,7 @@ class Register
     end
   end
 
-  def accept_payment
+  def pay
     puts
     @new_subtotal = @subtotal
     while true
@@ -68,10 +68,10 @@ def next_transaction
 end
 
 def start_transaction
-  object = Register.new
+  object = CashRegister.new
   object.total
-  object.new_purchase
-  object.accept_payment
+  object.purchase
+  object.pay
   object.calculate_change
   next_transaction
 end
@@ -80,15 +80,6 @@ start_transaction
 
 # Working price entry method:
 
-# def new_purchase
-#   puts
-#   print 'Grocery: ENTER PRICE: '
-#   print "ENTER PRICE or P to pay: "
-#   @purchase1 = gets.chomp.to_f
-#   puts "New Purchase is $#{@purchase1}"
-#   @subtotal = @subtotal + @purchase1
-#   print "SUBTOTAL: $#{@subtotal}"
-# end
 # puts Regiser
 # register = CashRegister.new
 # register.total  # => 0.00
