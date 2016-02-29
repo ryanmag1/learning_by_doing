@@ -8,78 +8,80 @@ class CashRegister
   end
 
   def total
-    puts "Current Total is #{@subtotal}"
+    puts "register.total $#{@subtotal.round(2)}"
   end
 
-  def purchase
-    puts
-    print 'Grocery: ENTER PRICE: '
-    while true
-      @purchase = gets.chomp
-      break if @purchase.to_s == 'P'
-      @purchase = @purchase.to_f
-      puts "New Purchase is $#{@purchase}"
-      @subtotal = @subtotal + @purchase
-      puts
-      print "SUBTOTAL: $#{@subtotal}"
-      puts
-      print 'ENTER NEW PRICE or P to pay: '
-    end
+  def purchase (purchase_amount)
+    @purchase = purchase_amount
+    @purchase = @purchase.to_f
+    puts "register.purchase: #{@purchase}"
+    @subtotal = @subtotal + @purchase
   end
 
-  def pay
-    puts
+  def pay (amount_tendered)
     @new_subtotal = @subtotal
     while true
-      puts
-      print "Amount due: #{@new_subtotal} ENTER PAYMENT AMOUNT: $"
-      @amount_tender = gets.chomp
-      print "You entered $#{@amount_tender}"
+      @amount_tender = amount_tendered
+      if @amount_tender <= @subtotal
+        @subtotal = @new_subtotal.to_f - @amount_tender.to_f
+        print "register.pay: $#{@amount_tender}"
+      end
       # Set new variable last_subtotal to pass to calculate change method
       @last_subtotal = @new_subtotal
       @new_subtotal = @new_subtotal.to_f - @amount_tender.to_f
-      if @new_subtotal <= 0.00
+      if @new_subtotal >= 0.00
+        puts "  Your new total is $#{@new_subtotal.round(2)}"
+      else
+        @subtotal = 0.00
         break
       end
     end
   end
 
+
   def calculate_change
     change_due = @amount_tender.to_f - @last_subtotal.to_f
-    puts
-    puts
-    puts "Your change is: $#{change_due}"
-    puts
+    puts "register.pay: $#{@amount_tender}  Your change is: $#{change_due.round(2)}"
     puts 'Thank you and have a nice day!'
   end
+
 end
 
-def next_transaction
+
+def start_transaction_1
   puts
-  while true
-    print 'Start another transaction? y/n: '
-    start_new_trx = gets.chomp
-    if start_new_trx == 'y'
-      start_transaction
-    elsif start_new_trx == 'n'
-      break
-    end
-  end
-end
-
-def start_transaction
+  puts "TRANSACTION 1 BELOW"
+  puts
   register = CashRegister.new
   register.total
-  register.purchase
-  register.pay
+  register.purchase (3.78)
+  register.total
+  register.pay (5.00)
   register.calculate_change
-  next_transaction
 end
 
-start_transaction
+def start_transaction_2
+  # TRANSACTION 2
+  puts
+  puts
+  puts "TRANSACTION 2 BELOW"
+  puts
+  register = CashRegister.new
+  register.total # => 0.00
+  register.purchase (3.78) # => 3.78
+  register.purchase(5.22) # => 9.00
+  register.total # => 9.00
+  register.pay (5.00) # => "Your new total is $4.00"
+  register.pay(5.00) # => "Your change is $1.00"
+  register.calculate_change
+  register.total
 
-# Working price entry method:
+end
 
+start_transaction_1
+start_transaction_2
+
+# TRANSACTION 1
 # puts Regiser
 # register = CashRegister.new
 # register.total  # => 0.00
@@ -87,3 +89,4 @@ start_transaction
 # register.total  # => 3.78
 # register.pay(5.00)  # => "Your change is $1.22"
 # register.total # => 0.00
+
