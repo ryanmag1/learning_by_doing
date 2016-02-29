@@ -1,5 +1,5 @@
 AllCops:
   Exclude:
     - 'Guardfile'
-    - 'homework_tester/**'
+    - 'homework_tester/**/*'
 
