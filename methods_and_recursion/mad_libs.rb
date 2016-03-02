@@ -5,12 +5,11 @@
 #    end
 
 def mad_libs
- puts 'A vacation is when you take a trip to some ' + gets.chomp + ' place with your ' + gets.chomp + ' family. Usually you go to some place that is near a
-  /an ' + gets.chomp + ' or up on a/an ' + gets.chomp + '. A good vacation place is one where you can ride ' + gets.chomp + '
-  or play ' + gets.chomp + ' or go hunting for ' + gets.chomp + ' . I like to spend my time ' + gets.chomp + '______ or ' + gets.chomp + '______.
-    When parents go on a vacation, they spend their time eating three ' + gets.chomp + ' a day, and fathers play golf, and mothers sit around ' + gets.chomp + '______. Last summer, my little brother fell in a/an ' + gets.chomp + ' and got poison ' + gets.chomp + ' all
-  over his ' + gets.chomp + '______. My family is going to go to (the)
-  ' + gets.chomp + ', and I will practice ' + gets.chomp + '______. Parents
+ puts 'A vacation is when you take a trip to some ' + gets.chomp + ' place with your ' + gets.chomp + ' family. Usually you go to some place that is near a/an ' + gets.chomp + ' or up on a/an ' + gets.chomp + '. A good vacation place is one where you can ride ' + gets.chomp + '
+  or play ' + gets.chomp + ' or go hunting for ' + gets.chomp + '. I like to spend my time ' + gets.chomp + ' or ' + gets.chomp + '.
+    When parents go on a vacation, they spend their time eating three ' + gets.chomp + ' a day, and fathers play golf, and mothers sit around ' + gets.chomp + '. Last summer, my little brother fell in a/an ' + gets.chomp + ' and got poison ' + gets.chomp + ' all
+  over his ' + gets.chomp + '. My family is going to go to (the)
+  ' + gets.chomp + ', and I will practice ' + gets.chomp + '. Parents
   need vacations more than kids because parents are always very
   ' + gets.chomp + ' and because they have to work ' + gets.chomp + '
   hours every day all year making enough ' + gets.chomp + ' to pay
