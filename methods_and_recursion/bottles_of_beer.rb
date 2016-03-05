@@ -1,41 +1,37 @@
 #!/usr/bin/env ruby
 
-
-number_of_beers_start = 99
-new_number_of_beers = number_of_beers_start
-while new_number_of_beers > 2
-  puts new_number_of_beers.to_s + " bottles of beer on the wall, #{new_number_of_beers.to_s} bottles of beer."
-  new_number_of_beers = new_number_of_beers -1
-  puts "Take one down and pass it around, #{new_number_of_beers} bottles of beer on the wall."
-puts
+def number_of_beers(number = 99)
+  return buy_more_beer if number == 0
+  print_lyrics(number)
+  number_of_beers(number - 1)
 end
 
-puts '2 bottles of beer on the wall, 2 bottles of beer.'
-puts 'Take one down and pass it around, 1 bottle of beer on the wall.'
-puts
-puts '1 bottle of beer on the wall, 1 bottle of beer.'
-puts 'Take one down and pass it around, no more bottles of beer on the wall.'
-puts
-puts 'No more bottles of beer on the wall, no more bottles of beer.'
-puts 'Go to the store and buy some more, 99 bottles of beer on the wall.'
+def print_lyrics(number)
+  bottle = bottle_or_bottles(number)
+  puts number.to_s + " #{bottle} of beer on the wall, #{number} #{bottle} of beer."
+  puts "Take one down and pass it around, #{number} #{bottle} of beer on the wall."
+  puts
+end
 
+def bottle_or_bottles(number)
+  if number > 1
+    'bottles'
+  else
+    'bottle'
+  end
+end
 
+def it_one_method(number)
+  if number > 1
+    'one'
+  else
+    'it'
+  end
+end
 
+def buy_more_beer
+  puts 'No more bottles of beer on the wall, no more bottles of beer.'
+  puts 'Go to the store and buy some more, 99 bottles of beer on the wall.'
+end
 
-
-# 99 bottles of beer on the wall, 99 bottles of beer.
-#   Take one down and pass it around, 98 bottles of beer on the wall.
-#   98 bottles of beer on the wall, 98 bottles of beer.
-#   Take one down and pass it around, 97 bottles of beer on the wall.
-#   97 bottles of beer on the wall, 97 bottles of beer.
-#   Take one down and pass it around, 96 bottles of beer on the wall.
-#   96 bottles of beer on the wall, 96 bottles of beer.
-#   Take one down and pass it around, 95 bottles of beer on the wall.
-#  3 bottles of beer on the wall, 3 bottles of beer.
-#   Take one down and pass it around, 2 bottles of beer on the wall.
-#   2 bottles of beer on the wall, 2 bottles of beer.
-#   Take one down and pass it around, 1 bottle of beer on the wall.
-#   1 bottle of beer on the wall, 1 bottle of beer.
-#   Take one down and pass it around, no more bottles of beer on the wall.
-#   No more bottles of beer on the wall, no more bottles of beer.
-#     Go to the store and buy some more, 99 bottles of beer on the wall.
+number_of_beers
