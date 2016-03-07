@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-#
 # Comment for DogCare class
 class DogCare
   def initialize
