@@ -3,9 +3,9 @@
 @numbers = Array(1..100)
 @fizz_buzz_array = ['Fizz', 'Buzz', 'FizzBuzz']
 
-@numbers.map! {|number| number % 5 == 0 && number % 3 == 0 ? @fizz_buzz_array[2]: number }.flatten!
-@numbers.map! {|number| number % 3 == 0 ? @fizz_buzz_array[0]: number }.flatten!
-@numbers.map! {|number| number % 5 == 0 ? @fizz_buzz_array[1] : number }.flatten!
+@numbers.map! { |number| number % 5 == 0 && number % 3 == 0 ? @fizz_buzz_array[2] : number }.flatten!
+@numbers.map! { |number| number % 3 == 0 ? @fizz_buzz_array[0] : number }.flatten!
+@numbers.map! { |number| number % 5 == 0 ? @fizz_buzz_array[1] : number }.flatten!
 
 puts @numbers
 
